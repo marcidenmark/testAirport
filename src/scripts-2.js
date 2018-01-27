@@ -1,12 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed");
-  // Add here your addEventListener code
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   console.log("DOM fully loaded and parsed");
+//   // Add here your addEventListener code
+// });
 
 const endpoint = 'https://gist.githubusercontent.com/marcidenmark/b7d5160b19cf97b6d08c64dd68c5cc4c/raw/204fb9fd3f8f03688f9a6313ca53b7ce9956663a/flights.json';
-const departure = document.getElementById("departureCity");
+// const departure = document.getElementById("departureCity");
 
-cities =
+// cities = this creates a promise, but it is "pending" when seen in the console"
 	fetch(endpoint)
 		.then(rawdata => rawdata.json())//fetch can't handle json.
 		.then((data) => {
@@ -15,7 +15,6 @@ cities =
  				console.log(departureCity);
 
   	});
-	console.log(cities);
 	// console.log(departure);
 
 
