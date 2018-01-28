@@ -28,3 +28,4 @@ const evenNumbers = numbers.filter(function(n) {
   return n % 2 === 0; // true if "n" is par, false if "n" isn't
 });
 console.log(evenNumbers);
+
