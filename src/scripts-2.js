@@ -16,28 +16,21 @@ const endpoint = 'https://gist.githubusercontent.com/marcidenmark/b7d5160b19cf97
 
   	});
 	// console.log(departure);
-<input type="search" id="address-input" placeholder="Where are we going?" />
+// <input type="search" id="address-input" placeholder="Where are we going?" />
 
 
-  var placesAutocomplete = places({
-    container: document.querySelector('#address-input')
+ 	let placesAutocomplete = places({
+    	container: document.querySelector('#address-input')
   });
-console.log(placesAutocomplete);
+	console.log(placesAutocomplete);
+
 	departureCity.addEventListener("click", (event) => {
 	console.log(event);
 	console.log(event.target);
   });
 
 
- var placesAutocomplete = places({
-    container: document.querySelector('#address-input')
-  });
 
-numbers = [1,3,5,11,22,8]
-const evenNumbers = numbers.filter(function(n) {
-  return n % 2 === 0; // true if "n" is par, false if "n" isn't
-});
-console.log(evenNumbers);
 // const button = document.getElementByClassName("mdc-button");
 // console.log(button);
 

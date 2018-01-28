@@ -22,3 +22,9 @@ fetch(endpoint)
     //write your remaining logic here:
 
 });
+
+numbers = [1,3,5,11,22,8]
+const evenNumbers = numbers.filter(function(n) {
+  return n % 2 === 0; // true if "n" is par, false if "n" isn't
+});
+console.log(evenNumbers);
