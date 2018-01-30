@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
-  	<head>
+<html lang="en">
+<head>
+	<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Airport App</title>
@@ -9,6 +10,7 @@
       rel="stylesheet"
       href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
   	</head>
+</head>
 <main>
   <h1 class="mdc-typography--display1">Copenhagen Airport App</h1>
 
@@ -16,7 +18,6 @@
 
   <form action="#" id="greeting-form">
     <div>
-
       <div class="mdc-form-field">
         <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
           <input id="departureCity" type="text" class="mdc-text-field__input">
@@ -26,28 +27,6 @@
           <div class="mdc-text-field__bottom-line"></div>
         </div>
       </div>
-
-<!--    These fields should first show after the search has been made. And then they will not be form fields anynore.
-		 <div class="mdc-form-field">
-        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
-          <input id="takeOffTime" type="text" class="mdc-text-field__input">
-          <label for="takeOffTime" class="mdc-text-field__label">
-            Take off Time
-          </label>
-          <div class="mdc-text-field__bottom-line"></div>
-        </div>
-      </div>
-
- 	<div class="mdc-form-field">
-        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
-          <input id="arrivalTime" type="text" class="mdc-text-field__input">
-          <label for="arrivalTime" class="mdc-text-field__label">
-            Arrival Time
-          </label>
-          <div class="mdc-text-field__bottom-line"></div>
-        </div>
-      </div> -->
-
     </div>
 
     <button type="submit"
@@ -59,7 +38,6 @@
     </button>
   </form>
 
-  <!-- The p element below is where we'll eventually output our greeting -->
   <p class="mdc-typography--headline" id="greeting">
   	Welcome to the Copenhagen Airport App. Above you can search for arivals landing in Copenhagen.
   </p> <br>
@@ -68,7 +46,6 @@
   </p>
   <form action="#" id="greeting-form">
     <div>
-
       <div class="mdc-form-field">
         <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
           <input id="destination" type="text" class="mdc-text-field__input">
@@ -78,27 +55,6 @@
           <div class="mdc-text-field__bottom-line"></div>
         </div>
       </div>
-
-      <!-- <div class="mdc-form-field">
-        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
-          <input id="takeOffTime" type="text" class="mdc-text-field__input">
-          <label for="takeOffTime" class="mdc-text-field__label">
-            Take Off Time
-          </label>
-          <div class="mdc-text-field__bottom-line"></div>
-        </div>
-      </div>
-
- 	<div class="mdc-form-field">
-        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
-          <input id="arrivalTime" type="text" class="mdc-text-field__input">
-          <label for="arrivalTime" class="mdc-text-field__label">
-            Arrival Time
-          </label>
-          <div class="mdc-text-field__bottom-line"></div>
-        </div>
-      </div> -->
-
     </div>
 
     <button type="submit"
@@ -111,13 +67,36 @@
   </form>
 </main>
 
-	<script src="https://cdn.jsdelivr.net/npm/places.js@1.4.18"></script>
-
- <script src="src/scripts-2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.4.18"></script>
 
 
+<script>
+const endpoint = 'https://gist.githubusercontent.com/marcidenmark/b7d5160b19cf97b6d08c64dd68c5cc4c/raw/204fb9fd3f8f03688f9a6313ca53b7ce9956663a/flights.json';
+	const cities =
+	fetch(endpoint)
+		.then(rawdata => rawdata.json())//fetch can't handle json.
+		.then((data) => {
+			// departureCity.innerHTML = ""; not giving anything.
+ 			console.log(data); //this is giving the array of objects
+ 			console.log(departureCity);//giving in input id html
+
+  	});
+	console.log(cities);
+	departureCity.addEventListener("click", (event) => {
+	console.log(event);
+	console.log(event.target);
+  });
+ 	let placesAutocomplete = places({
+    	container: document.querySelector('#address-input')
+  });
+	console.log(placesAutocomplete);
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.4.18"></script>
 
 
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <script>window.mdc.autoInit();</script>
+
 </html>
