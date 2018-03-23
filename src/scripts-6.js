@@ -1,3 +1,22 @@
+const destination = document.getElementById('destination');
+const endpoint = 'https://gist.githubusercontent.com/marcidenmark/b7d5160b19cf97b6d08c64dd68c5cc4c/raw/204fb9fd3f8f03688f9a6313ca53b7ce9956663a/flights.json';
+// const departure = document.getElementById("departureCity");
+// citties = this creates a promise, but it is "pending" when seen in the console"
+    fetch(endpoint)
+    .then(rawdata => rawdata.json()) //fetch can't handle json.
+    .then((data) => {
+    	let destination = data.results;
+        console.log(data);
+        // console.log(destination); //giving nothing
+    });
+ //console.log(destination);
+// console.log(departure);
+destination.addEventListener("click", (event) => {
+    console.log(event);
+    console.log(event.target);
+});
+
+
 
   // function createNode(element) {
   //     return document.createElement(element);
@@ -26,20 +45,4 @@
   // });
 
 // _________________________________________
-const cities = document.getElementById('cities');
-const endpoint = 'https://gist.githubusercontent.com/marcidenmark/b7d5160b19cf97b6d08c64dd68c5cc4c/raw/204fb9fd3f8f03688f9a6313ca53b7ce9956663a/flights.json';
-// const departure = document.getElementById("departureCity");
-// citties = this creates a promise, but it is "pending" when seen in the console"
-    fetch(endpoint)
-    .then(rawdata => rawdata.json()) //fetch can't handle json.
-    .then((data) => {
-    	let cities = data.results;
-        // console.log(data);
-        console.log(cities); //giving in input id html
-    });
- //console.log(cities);
-// console.log(departure);
-cities.addEventListener("click", (event) => {
-    console.log(event);
-    console.log(event.target);
-});
+//
